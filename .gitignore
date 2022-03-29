@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#variable de entorno
+.env
+
 # production
 /build
 
