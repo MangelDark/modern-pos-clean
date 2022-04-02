@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import TecladoNumerico from '../../utils/TecladoNumerico';
 
 const Login = () => {
 
@@ -17,6 +18,10 @@ const Login = () => {
       <h2>Welcome to login page! </h2>
 			<p>Please loging to continue</p>
 			<button onClick={login}> Login</button>
+
+      <div>
+        <TecladoNumerico />
+      </div>
     </div>
   )
 }
