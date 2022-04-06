@@ -1,0 +1,17 @@
+
+.contenedor-detail-datatable-cells{
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+}
+
+.textPrimary{
+  text-align: start;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+}
+.textSecondary{
+  padding-left: 20px;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}

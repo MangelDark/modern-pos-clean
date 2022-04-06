@@ -1,0 +1,18 @@
+
+ .caja {
+    display: flex;
+
+    flex-direction: column;
+    background: blue;
+ 
+ }
+ 
+ .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,50px) repeat(2,100px) ;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    
+    }
+   

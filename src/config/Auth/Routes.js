@@ -10,8 +10,8 @@ import Login from '../../components/Autenticaciones/login/Login';
 import LayoutPage from '../../Pages/LayoutPage';
 import Restaurante from '../../components/Area/restaurante';
 import Order from '../../components/Area/restaurante/ordenes/Ordernes';
-import Caja from '../../components/Area/restaurante/caja/Caja';
-import Transaction from '../../components/Area/punto de venta/transaccion';
+import Pedido from '../../components/Area/restaurante/pedidos/Pedidos';
+import Transaction from '../../components/Area/punto de venta/transaction';
 
 
 const MainRoutes = () => {
@@ -22,17 +22,20 @@ const MainRoutes = () => {
         {/* Wrap all Route under ProtectRoutes element */}
         <Route path='/' element={<ProtectRoute/>} >
             <Route path='/' element={<InnerContent/>}>
-              <Route path="/" element={ <Navigate replace to="dashboard" />} />
-              <Route path="dashboard" element={<LayoutPage />} />
+              <Route path="/" element={<LayoutPage />} >
               <Route path="transaction" element={<Transaction/>}/>
-              <Route path="restaurante" element={<Restaurante/>}>
+              <Route path="restaurant" element={<Restaurante/>}>
                 <Route path="ordenes" element={<Order/>}></Route>         
-                <Route path="caja" element={<Caja/>}></Route>
+                <Route path="pedidos" element={<Pedido/>}></Route>
               </Route>
 
+             
+              </Route>
+             
+              
+              <Route path="*" element={<NotFound />} /> 
               {/* Si la pagina no existe mostrar este error 404 */}
-              <Route path="*" element={<NotFound />}>     
-            </Route>
+             
         </Route>
         </Route>
 

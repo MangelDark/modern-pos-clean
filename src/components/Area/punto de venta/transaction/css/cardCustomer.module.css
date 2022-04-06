@@ -1,0 +1,27 @@
+.container-body-card{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat( 3,1fr);
+    font-size: 12px;
+}
+
+.item-loyalty-card-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.item-balance-card-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.item-credit-card-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+}

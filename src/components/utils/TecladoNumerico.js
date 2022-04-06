@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 
 //Estilos personalizados del teclado numerico
 const useStyles = makeStyles( theme => ({
@@ -61,40 +62,48 @@ const useStyles = makeStyles( theme => ({
   }));
 
 
+const ContainerGrid = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  width:100%;
+  height:100%;
+ 
+  `
+const Container  =  styled.div`
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+`;
 
 
-
-const TecladoNumerico = () => {
+const TecladoNumerico = ({handleInput,deletelast,clear}) => {
 
     
     const classes =  useStyles();
 
-    const handleInput =()=>{
-        alert('test');
-    }
-
-    const deletelast = ()=>{
-        alert('test delete');
-    }
-
-    const clear = () =>{
-        alert('test clear');
-    }
+   
   return (
-    <div className="container-button-keyboard-number">   
-    <Button data-value="1"   onClick={handleInput} variant="contained" key={1}>{'1'}</Button>
-    <Button data-value="2"   onClick={handleInput} variant="contained" key={2}>{'2'}</Button>
-    <Button data-value="3"   onClick={handleInput} variant="contained" key={3}>{'3'}</Button>
-    <Button data-value="4"   onClick={handleInput} variant="contained" key={4}>{'4'}</Button>
-    <Button data-value="5"   onClick={handleInput} variant="contained" key={5}>{'5'}</Button>
-    <Button data-value="6"   onClick={handleInput} variant="contained" key={6}>{'6'}</Button>
-    <Button data-value="7"   onClick={handleInput} variant="contained" key={7}>{'7'}</Button>
-    <Button data-value="8"   onClick={handleInput} variant="contained" key={8}>{'8'}</Button>
-    <Button data-value="9"   onClick={handleInput} variant="contained" key={9}>{'9'}</Button>
-    <Button data-value="Clear"   onClick={deletelast} variant="contained" key={10}>{'DEL'}</Button>
-    <Button data-value="0"   onClick={handleInput} variant="contained" key={11}>{'0'}</Button>
-    <Button data-value="."   onClick={clear} variant="contained" key={12}>{'Clear'}</Button>
-    </div>
+    <ContainerGrid>
+      <Container>   
+      <Button data-value="1"   onClick={handleInput} variant="contained" key={1}>{'1'}</Button>
+            <Button data-value="2"   onClick={handleInput} variant="contained" key={2}>{'2'}</Button>
+            <Button data-value="3"   onClick={handleInput} variant="contained" key={3}>{'3'}</Button>
+            <Button data-value="4"   onClick={handleInput} variant="contained" key={4}>{'4'}</Button>
+            <Button data-value="5"   onClick={handleInput} variant="contained" key={5}>{'5'}</Button>
+            <Button data-value="6"   onClick={handleInput} variant="contained" key={6}>{'6'}</Button>
+            <Button data-value="7"   onClick={handleInput} variant="contained" key={7}>{'7'}</Button>
+            <Button data-value="8"   onClick={handleInput} variant="contained" key={8}>{'8'}</Button>
+            <Button data-value="9"   onClick={handleInput} variant="contained" key={9}>{'9'}</Button>
+            <Button data-value="Clear"   onClick={deletelast} variant="contained" key={10}>{'DEL'}</Button>
+            <Button data-value="0"   onClick={handleInput} variant="contained" key={11}>{'0'}</Button>
+            <Button data-value="."   onClick={clear} variant="contained" key={12}>{'Clear'}</Button>
+        </Container>
+    </ContainerGrid>
+ 
   )
 }
 
